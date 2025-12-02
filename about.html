@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - New Modern Himalayan Nursery</title>
+    
+    <!-- Google Fonts to match the modern sans-serif look -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- 1. THEME VARIABLES (Based on your image) --- */
+        :root {
+            --primary-green: #2d8a55; /* Matches the header/logo green */
+            --dark-green: #1e5e3a;
+            --accent-green: #e8f5e9; /* Light background for sections */
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 10px 25px rgba(45, 138, 85, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        /* --- 2. GLOBAL RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            background-color: #fcfcfc;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-green);
+        }
+
+        /* --- 3. LAYOUT UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header Title Style */
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* --- 4. WHO WE ARE SECTION --- */
+        .who-we-are {
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-content h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-green);
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* --- 5. MISSION & VISION --- */
+        .mission-vision-section {
+            background-color: var(--accent-green); /* Light green bg like the nursery theme */
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .mv-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-card);
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-bottom: 4px solid var(--primary-green);
+        }
+
+        .mv-icon {
+            font-size: 3rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .mv-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .mv-card p {
+            color: var(--text-light);
+        }
+
+        /* --- 6. CORE VALUES (Based on "Why Choose Green Haven?" design) --- */
+        .values-section {
+            background-color: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .value-card {
+            background: var(--white);
+            border: 1px solid #eee; /* Subtle border like the image */
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-green);
+            transform: translateY(-5px);
+        }
+
+        .value-icon-wrapper {
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .value-icon-wrapper i {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+        }
+
+        .value-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .value-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- 7. ANIMATIONS --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- 8. RESPONSIVE DESIGN --- */
+        @media (max-width: 1024px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .who-we-are {
+                flex-direction: column;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+        
+<!-- Container Check karein -->
+<div class="container" style="position: relative; z-index: 10;">
+            <h2>New Modern Himalayan Nursery</h2>
+    <!-- Button Code -->
+    <a href="index.html" class="back-btn">← Back to Home</a>
+    
+    <!-- CSS yahi inject kar dein agar file me nahi hai -->
+    <style>
+        .back-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #2d8a55;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            background: #1e5e3a;
+            transform: translateX(-5px);
+        }
+    </style>
+
+</div>
+        
+    <!-- SECTION 1: WHO WE ARE -->
+    <section class="section-padding who-we-are">
+        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+            <!-- Text Content -->
+            <div class="about-content reveal">
+                <div class="section-header" style="margin-bottom: 20px; text-align: left;">
+                    <h2>Who We Are</h2>
+                    <p style="color: var(--primary-green); font-weight: 600;">Rooted in Nature, Growing with Care.</p>
+                </div>
+                <p>
+                    Welcome to <strong>New Modern Himalayan Nursery</strong>. Established in the lush foothills, we are more than just a plant nursery; we are a community of nature enthusiasts dedicated to bringing the serenity of the Himalayas to your doorstep.
+                </p>
+                <p>
+                    With over 10 years of experience in horticulture, we specialize in acclimatizing exotic and native species for your home and garden. Whether you are a seasoned gardener or a budding plant parent, our team ensures that every sapling you take home is healthy, resilient, and ready to thrive.
+                </p>
+                <button style="margin-top: 10px; padding: 12px 30px; background: var(--primary-green); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem; transition: 0.3s;" onmouseover="this.style.background='#1e5e3a'" onmouseout="this.style.background='#2d8a55'">
+                    Learn More About Our Journey
+                </button>
+            </div>
+
+            <!-- Image Content -->
+            <div class="about-image reveal">
+                <!-- Using a placeholder image that matches a nursery vibe -->
+                <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nursery Garden">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: MISSION & VISION -->
+    <section class="section-padding mission-vision-section">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2>Our Purpose</h2>
+                <p>Guiding principles that drive our growth.</p>
+            </div>
+
+            <div class="mv-grid">
+                <!-- Mission -->
+                <div class="mv-card reveal">
+                    <div class="mv-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To cultivate a greener world by providing high-quality, sustainable plant varieties while educating our community on the importance of ecological balance and organic gardening practices.</p>
+                </div>
+
+                <!-- Vision -->
+                <div class="mv-card reveal">
+                    <div class="mv-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To become the most trusted botanical haven in the region, where every household embraces the joy of gardening, creating breathable, vibrant living spaces for future generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: CORE VALUES -->
+    <section class="section-padding values-section">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <h2>Our Core Values</h2>
+                <p>The roots of our culture.</p>
+            </div>
+
+            <div class="values-grid">
+                <!-- Value 1 -->
+                <div class="value-card reveal">
+                    <div class="value-icon-wrapper">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h4>Sustainability</h4>
+                    <p>We prioritize eco-friendly growing methods, avoiding harmful chemicals to protect the soil and the soul.</p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="value-card reveal">
+                    <div class="value-icon-wrapper">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h4>Integrity</h4>
+                    <p>Honesty in our pricing and transparency in our plant care advice. We promise only what we can deliver.</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="value-card reveal">
+                    <div class="value-icon-wrapper">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Community</h4>
+                    <p>We believe in growing together. We support local farmers and conduct workshops for plant lovers.</p>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="value-card reveal">
+                    <div class="value-icon-wrapper">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4>Quality</h4>
+                    <p>Every plant is inspected for health and vitality. We are "Nursery Certified" for excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for Scroll Animations
+        // This makes elements fade in and slide up as you scroll down
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.15 // trigger when 15% of element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target); // Run animation only once
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- COPY CSS FROM HERE --- */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        :root {
+            --primary-green: #2d8a55;
+            --dark-green: #1e5e3a;
+            --light-bg: #f9fdfa;
+            --text-dark: #333;
+            --text-gray: #666;
+        }
+
+        /* Section Styling */
+        .quote-section {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background Pattern (Optional Leaf decoration) */
+        .quote-bg-icon {
+            position: absolute;
+            color: rgba(45, 138, 85, 0.03);
+            font-size: 30rem;
+            top: -10%;
+            right: -10%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .quote-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        /* Left Side: Content */
+        .quote-content {
+            flex: 1;
+            min-width: 350px;
+            background: var(--primary-green);
+            padding: 60px 40px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .quote-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .quote-content p {
+            font-size: 1rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .contact-highlights {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-highlights li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .contact-highlights i {
+            background: rgba(255,255,255,0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        /* Right Side: Form */
+        .quote-form-container {
+            flex: 1.2;
+            min-width: 350px;
+            padding: 60px 40px;
+            background: white;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Full width for message box */
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #fcfcfc;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(45, 138, 85, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: var(--dark-green);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-green);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(45, 138, 85, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .quote-wrapper {
+                flex-direction: column;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            .quote-content, .quote-form-container {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+    <!-- CSS yahi inject kar dein agar file me nahi hai -->
+    <style>
+        .back-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #2d8a55;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            background: #1e5e3a;
+            transform: translateX(-5px);
+        }
+    </style>
+
+</head>
+<body>
+<div class="container" style="position: relative; z-index: 10;">
+            <h2>New Modern Himalayan Nursery</h2>
+    <!-- Button Code -->
+    <a href="index.html" class="back-btn">← Back to Home</a>    
+</div>
+
+    <section class="quote-section" id="quote">
+        <!-- Background Decorative Icon -->
+        <i class="fas fa-leaf quote-bg-icon"></i>
+
+        <div class="container">
+            <div class="quote-wrapper">
+                
+                <!-- Left Side: Text Info -->
+                <div class="quote-content">
+                    <h2>Ready to Plant<br>Your Dreams?</h2>
+                    <p>Whether you need bulk plants for a nursery, landscaping for a new office, or just advice on your home garden, we are here to help. Get a competitive quote tailored to your needs.</p>
+                    
+                    <ul class="contact-highlights">
+                        <li>
+                            <i class="fas fa-check"></i> Wholesale Pricing
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> Expert Consultation
+                        </li>
+                        <li>
+                            <i class="fas fa-check"></i> Pan-Bihar Delivery
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Side: The Form -->
+                <div class="quote-form-container">
+                    <form action="#" method="POST">
+                        <div class="form-grid">
+                            <!-- Name -->
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" class="form-control" placeholder="Rohan kumar" required>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" class="form-control" placeholder="+91 98765 43210" required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control" placeholder="rohankr@example.com">
+                            </div>
+
+                            <!-- Service Type Dropdown -->
+                            <div class="form-group">
+                                <label>Interested In</label>
+                                <select class="form-control">
+                                    <option value="bulk">Bulk Plant Order</option>
+                                    <option value="landscape">Landscaping Service</option>
+                                    <option value="maintenance">Garden Maintenance</option>
+                                    <option value="other">Other Inquiry</option>
+                                </select>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="form-group full-width">
+                                <label>Your Requirements</label>
+                                <textarea class="form-control" placeholder="Tell us about the plants you need or your project area (in sq. ft)..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <button type="submit" class="submit-btn">
+                            Get Free Quote <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
